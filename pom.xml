@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+  >
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>jakartaee.examples.jsf</groupId>
+  <artifactId>hello</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Jakarta EE 9 JSF Hello</name>
+
+  <properties>
+    <!-- maven properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>11</maven.compiler.release>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+
+    <!-- code properties -->
+    <jakartaee-api.version>9.1.0</jakartaee-api.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>${jakartaee-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+</project>

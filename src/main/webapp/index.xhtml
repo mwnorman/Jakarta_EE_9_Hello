@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<!-- 
+  For Jakarta EE 9/JSF 3.0, the taglib xml namespaces are still bound to http://xmlns.jcp.org/jsf
+  
+  For Jakarta EE 10+/JSF 4+, the taglib xml namespaces moves to "jakarta.faces.html"
+  Also, the link becomes a URN instead of a URL, so the http(s):// prefix will be invalid
+  
+-->
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+  <h:head>
+    <title>#{uiconsts['helloTitle']}</title>
+    <!-- JSF allows one to easily use modern Frontend artifacts such as JQuery, Bootstrap etc. -->
+    <script src="https://unpkg.com/browse/jquery@3.6.0/dist/jquery.slim.js" crossorigin="anonymous" />
+    <link href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"  crossorigin="anonymous" />
+    <script src="https://unpkg.com/bootstrap@4.6.0/dist/js/bootstrap.min.js" crossorigin="anonymous" />
+    
+    <!-- misc style tweaks, most for tables -->
+    <style>
+      .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: #f0f0e0;
+      }
+      .table td {
+        position: relative;
+      }
+    </style>
+  </h:head>
+
+  <h:body>
+    <h1>Hello!</h1>
+    <div class="jumbotron bg-transparent">
+      <p class="text-wrap word-wrap break-word">
+      This simple 'Hello' example illustrates @Inject'ing the FacesContext into a Managed Bean. <br/>
+      Because the 'HelloManagedBean' is Request-scoped, the value of the facesContext will change every time the page is refreshed
+      </p>
+      <h:panelGrid columns="2" border="1">
+        <h:outputLabel value="FacesContext"></h:outputLabel>
+        <h:outputLabel value="#{helloManagedBean.facesContext}"></h:outputLabel>
+      </h:panelGrid>
+    </div>
+  </h:body>
+</html>
